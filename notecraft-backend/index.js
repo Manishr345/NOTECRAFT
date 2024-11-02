@@ -6,9 +6,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send("Hii I'm NOTECRAFT!!");
-})
+app.use('/api/auth', require('./Routes/auth'));
 
 app.listen(5000, () => {
     console.log('App is running at http://localhost:5000');
