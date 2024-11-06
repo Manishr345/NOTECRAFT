@@ -3,8 +3,9 @@ const router = express.Router();
 const User = require('../Models/user');
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
-router.post('/', [
+router.post('/signup', [
     body('name', 'Name must be of atleast 3 characters').isLength({ min: 3 }),
     body('email', 'Please enter a valid email').isEmail(),
     body('password', 'Password must be of atleast 8 characters').isLength({ min: 8 })
@@ -50,9 +51,16 @@ router.post('/login', [
         if (!verifyPass) {
             return res.status(401).json({ error: 'Please enter valid credentials' });
         }
-        res.send({ successful: 'You have successfully logged in' });
+        const userID = {
+            user: {
+                id: user.id
+            }
+        };
+        const jwtString = 'Nothing';
+        const token = jwt.sign(userID, jwtString);
+        res.send({ token });
     } catch (error) {
-        console.log(erorr.message);
+        console.log(error.message);
         res.send('Internal server error');
     }
 })
