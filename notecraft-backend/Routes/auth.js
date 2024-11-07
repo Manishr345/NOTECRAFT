@@ -4,6 +4,7 @@ const User = require('../Models/user');
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const fetchUser = require('../Middlewear/fetchUser');
 
 router.post('/signup', [
     body('name', 'Name must be of atleast 3 characters').isLength({ min: 3 }),
@@ -63,6 +64,12 @@ router.post('/login', [
         console.log(error.message);
         res.send('Internal server error');
     }
+})
+
+router.post('/fetchuser', fetchUser, async (req, res) => {
+    const userID = req.user.id;
+    const user = await User.findById(userID).select('-password');
+    res.send(user);
 })
 
 module.exports = router;
