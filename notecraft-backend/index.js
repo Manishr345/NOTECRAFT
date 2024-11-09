@@ -8,6 +8,8 @@ app.use(express.json());
 
 app.use('/api/auth', require('./Routes/auth'));
 
+app.use('/api/note', require('./Routes/note'));
+
 app.listen(5000, () => {
     console.log('App is running at http://localhost:5000');
 })
