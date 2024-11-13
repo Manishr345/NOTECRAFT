@@ -70,4 +70,21 @@ router.put('/updatenotes/:id', fetchUser, [
     }
 })
 
+router.delete('/deletenotes/:id', fetchUser, async (req, res) => {
+    try {
+        let note = await Note.findById(req.params.id);
+        if (!note) {
+            return res.status(400).json({ error: 'Note not found' });
+        }
+        if (note.user.toString() !== req.user.id) {
+            return res.status(401).json({ error: 'Not allowed' });
+        }
+        note = await Note.findByIdAndDelete(req.params.id);
+        res.json({successful: 'Note deleted'});
+    } catch (error) {
+        console.log(error.message);
+        res.send('Internal server error');
+    }
+})
+
 module.exports = router;
