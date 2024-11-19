@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useContext } from 'react';
 import NoteContext from '../Contexts/Note/NoteContext';
 import NoteItem from './NoteItem';
 
 export default function Note() {
-    const context = useContext(NoteContext);
+  const context = useContext(NoteContext);
+  useEffect(() => {
+    context.fetchNotes();
+  }, [])
   return (
     <div className='flex'>
-      {context.note.map((notes, key=notes._id) => {
-        return <NoteItem title={notes.title} description={notes.description} tag={notes.tag}/>
+      {Array.isArray(context.note) && context.note.map((notes) => {
+        return <NoteItem key={notes._id} title={notes.title} description={notes.description} tag={notes.tag} />
       })}
     </div>
   )
