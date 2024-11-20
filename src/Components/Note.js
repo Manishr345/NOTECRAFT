@@ -11,7 +11,7 @@ export default function Note() {
   return (
     <div className='flex'>
       {Array.isArray(context.note) && context.note.map((notes) => {
-        return <NoteItem key={notes._id} title={notes.title} description={notes.description} tag={notes.tag} />
+        return <NoteItem key={notes._id} id={notes._id} title={notes.title} description={notes.description} tag={notes.tag} />
       })}
     </div>
   )
