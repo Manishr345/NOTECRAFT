@@ -8,7 +8,7 @@ export function CardHoverEffectDemo() {
         context.fetchNotes();
     },[])
   return (
-  <div className="max-w-5xl mx-auto px-8">
+  <div className="max-w-5xl bg-black mx-auto px-8">
       <HoverEffect items={context.note} />
     </div>
   );
