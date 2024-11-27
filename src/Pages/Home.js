@@ -10,6 +10,7 @@ export default function Home() {
     <div className='w-full bg-black text-white'>
       <FlipWordsDemo/>
       <CardHoverEffectDemo/>
+      <Link to='/about'>About</Link>
       {/* <Link to='/addnotes'>Add Notes</Link>
       <Link to='/mynotes'>My Notes</Link> */}
     </div>

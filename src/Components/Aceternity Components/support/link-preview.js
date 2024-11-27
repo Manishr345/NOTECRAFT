@@ -20,7 +20,7 @@ export const LinkPreview = ({
   quality = 50,
   layout = "fixed",
   isStatic = false,
-  imageSrc = "/mynotes.png"
+  imageSrc
 }) => {
   let src;
   if (!isStatic) {
@@ -35,7 +35,7 @@ export const LinkPreview = ({
       "viewport.width": width * 3,
       "viewport.height": height * 3,
     });
-    src = `/mynotes.png`;
+    src = imageSrc;
   } else {
     src = imageSrc;
   }

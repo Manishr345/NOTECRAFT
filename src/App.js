@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import AddNote from './Pages/AddNote';
 import { AppleCardsCarouselDemo } from './Components/Aceternity Components/source/Carousel';
+import About from './Pages/About';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route exact path='/' element={<Home/>}></Route>
             <Route exact path='/addnotes' element={<AddNote/>}></Route>
             <Route exact path='/mynotes' element={<AppleCardsCarouselDemo/>}></Route>
+            <Route exact path='/about' element={<About/>}></Route>
           </Routes>
         </Router>
       </NoteState>
