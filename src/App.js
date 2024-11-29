@@ -9,12 +9,14 @@ import {
 import AddNote from './Pages/AddNote';
 import { AppleCardsCarouselDemo } from './Components/Aceternity Components/source/Carousel';
 import About from './Pages/About';
+import { NavbarDemo } from './Components/Aceternity Components/source/Navbar';
 
 function App() {
   return (
     <div>
       <NoteState>
         <Router>
+          <NavbarDemo/>
           <Routes>
             <Route exact path='/' element={<Home/>}></Route>
             <Route exact path='/addnotes' element={<AddNote/>}></Route>

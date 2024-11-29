@@ -7,10 +7,10 @@ import { CardHoverEffectDemo } from '../Components/Aceternity Components/source/
 
 export default function Home() {
   return (
-    <div className='w-full bg-black text-white'>
+    <div className='w-full bg-black text-white md:mt-32'>
       <FlipWordsDemo/>
       <CardHoverEffectDemo/>
-      <Link to='/about'>About</Link>
+      {/* <Link to='/about'>About</Link> */}
       {/* <Link to='/addnotes'>Add Notes</Link>
       <Link to='/mynotes'>My Notes</Link> */}
     </div>
