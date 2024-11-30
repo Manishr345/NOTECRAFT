@@ -3,7 +3,7 @@ import { TimelineDemo } from '../Components/Aceternity Components/source/Progres
 
 export default function About() {
   return (
-    <div>
+    <div className='mt-32'>
       <TimelineDemo/>
     </div>
   )

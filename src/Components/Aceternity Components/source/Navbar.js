@@ -16,7 +16,7 @@ function Navbar({
   const [active, setActive] = useState(null);
   return (
     (<div
-      className={cn("fixed text-xl top-10 inset-x-0 max-w-4xl mx-auto mt-7 z-50", className)}>
+      className={cn("fixed text-xl top-10 inset-x-0 max-w-4xl mx-auto mt-2 lg:mt-7 z-50", className)}>
       <Menu setActive={setActive}>
         <HoveredLink href="http://localhost:3000/">Home</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Notes">

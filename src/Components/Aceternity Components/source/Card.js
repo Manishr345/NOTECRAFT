@@ -9,7 +9,7 @@ export function CardHoverEffectDemo() {
         context.fetchNotes();
     },[])
   return (
-  <div className="max-w-5xl bg-black w-full h-screen mx-auto px-8">
+  <div className="max-w-5xl bg-black w-full h-full mx-auto px-8">
       <LinkPreviewDemo content='My Notes' url="http://localhost:3000/mynotes" image="/mynotes.png"/>
       <HoverEffect items={context.note}/>
     </div>

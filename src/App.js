@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
 import NoteState from './Contexts/Note/NoteState';
 import {
   BrowserRouter as Router,
@@ -10,6 +10,7 @@ import AddNote from './Pages/AddNote';
 import { AppleCardsCarouselDemo } from './Components/Aceternity Components/source/Carousel';
 import About from './Pages/About';
 import { NavbarDemo } from './Components/Aceternity Components/source/Navbar';
+import { TracingBeamDemo } from './Components/Aceternity Components/source/TracingBeam';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Router>
           <NavbarDemo/>
           <Routes>
-            <Route exact path='/' element={<Home/>}></Route>
+            <Route exact path='/' element={<TracingBeamDemo/>}></Route>
             <Route exact path='/addnotes' element={<AddNote/>}></Route>
             <Route exact path='/mynotes' element={<AppleCardsCarouselDemo/>}></Route>
             <Route exact path='/about' element={<About/>}></Route>
