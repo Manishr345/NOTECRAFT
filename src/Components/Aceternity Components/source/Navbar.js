@@ -18,14 +18,14 @@ function Navbar({
     (<div
       className={cn("fixed text-xl top-10 inset-x-0 max-w-4xl mx-auto mt-2 lg:mt-7 z-50", className)}>
       <Menu setActive={setActive}>
-        <HoveredLink href="http://localhost:3000/">Home</HoveredLink>
+        <HoveredLink to="/">Home</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Notes">
           <div className="flex flex-col space-y-4 text-lg">
-            <HoveredLink href="http://localhost:3000/mynotes">My Notes</HoveredLink>
-            <HoveredLink href="http://localhost:3000/addnotes">Add Note</HoveredLink>
+            <HoveredLink to="/mynotes">My Notes</HoveredLink>
+            <HoveredLink to="/addnotes">Add Note</HoveredLink>
           </div>
         </MenuItem>
-        <HoveredLink href="http://localhost:3000/about">About</HoveredLink>
+        <HoveredLink to="/about">About</HoveredLink>
       </Menu>
     </div>)
   );

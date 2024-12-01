@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const transition = {
   type: "spring",
@@ -96,10 +97,10 @@ export const HoveredLink = ({
   ...rest
 }) => {
   return (
-    (<a
+    (<Link
       {...rest}
       className="text-neutral-700 dark:text-neutral-200 hover:text-purple-400 ">
       {children}
-    </a>)
+    </Link>)
   );
 };
