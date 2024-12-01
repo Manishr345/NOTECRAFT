@@ -14,11 +14,11 @@ export const TracingBeam = ({
 
   const contentRef = useRef(null);
 
-  const y1 = useSpring(useTransform(scrollYProgress, [0, 0.8], [50, 1500]), {
+  const y1 = useSpring(useTransform(scrollYProgress, [0, 0.8], [50, 3500]), {
     stiffness: 500,
     damping: 90,
   });
-  const y2 = useSpring(useTransform(scrollYProgress, [0, 1], [50, 1500 - 200]), {
+  const y2 = useSpring(useTransform(scrollYProgress, [0, 1], [50, 3500 - 200]), {
     stiffness: 500,
     damping: 90,
   });
@@ -27,7 +27,7 @@ export const TracingBeam = ({
     (<motion.div
       ref={ref}
       className={cn("relative w-full max-w-4xl mx-auto h-full", className)}>
-      <div className="absolute top-0 -left-4 md:-left-60 h-full z-10">
+      <div className="absolute top-0 -left-4 md:-left-60 h-full z-20">
         <motion.div
           transition={{
             duration: 0.2,
@@ -54,14 +54,14 @@ export const TracingBeam = ({
             className="h-2 w-2  rounded-full border border-neutral-300 bg-white" />
         </motion.div>
         <svg
-          viewBox={`0 0 20 1500`}
+          viewBox={`0 0 20 3500`}
           width="20"
           // Set the SVG height
-          height="1500"
+          height="3500"
           className=" ml-4 block"
           aria-hidden="true">
           <motion.path
-            d={`M 1 0V -36 l 18 24 V ${1500 * 0.8} l -18 24V 1500`}
+            d={`M 1 0V -36 l 18 24 V ${3500 * 0.8} l -18 24V 3500`}
             fill="none"
             stroke="#9091A0"
             strokeOpacity="0.16"
@@ -69,7 +69,7 @@ export const TracingBeam = ({
               duration: 10,
             }}></motion.path>
           <motion.path
-            d={`M 1 0V -36 l 18 24 V ${1500 * 0.8} l -18 24V 1500`}
+            d={`M 1 0V -36 l 18 24 V ${3500 * 0.8} l -18 24V 3500`}
             fill="none"
             stroke="url(#gradient)"
             strokeWidth="1.25"
