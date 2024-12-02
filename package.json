@@ -4,14 +4,15 @@
   "private": true,
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.2",
-    "@tabler/icons-react": "^3.22.0",
+    "@radix-ui/react-label": "^2.1.0",
+    "@tabler/icons-react": "^3.23.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bcryptjs": "^2.4.3",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
-    "framer-motion": "^11.11.17",
+    "framer-motion": "^11.12.0",
     "jsonwebtoken": "^9.0.2",
     "qss": "^3.0.0",
     "react": "^18.3.1",
@@ -48,6 +49,6 @@
   },
   "devDependencies": {
     "concurrently": "^9.1.0",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.15"
   }
 }

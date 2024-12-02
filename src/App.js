@@ -11,6 +11,7 @@ import { AppleCardsCarouselDemo } from './Components/Aceternity Components/sourc
 import About from './Pages/About';
 import { NavbarDemo } from './Components/Aceternity Components/source/Navbar';
 import { TracingBeamDemo } from './Components/Aceternity Components/source/TracingBeam';
+import { SignupFormDemo } from './Pages/Signup';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Router>
           <NavbarDemo/>
           <Routes>
+            <Route exact path='/signup' element={<SignupFormDemo/>}></Route>
             <Route exact path='/' element={<TracingBeamDemo/>}></Route>
             <Route exact path='/addnotes' element={<AddNote/>}></Route>
             <Route exact path='/mynotes' element={<AppleCardsCarouselDemo/>}></Route>
