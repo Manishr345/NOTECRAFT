@@ -18,7 +18,7 @@ function Navbar({
     (<div
       className={cn("fixed text-xl top-10 inset-x-0 max-w-4xl mx-auto mt-2 lg:mt-7 z-50", className)}>
       <Menu setActive={setActive}>
-        <HoveredLink to="/">Home</HoveredLink>
+        <HoveredLink to="/home">Home</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Notes">
           <div className="flex flex-col space-y-4 text-lg">
             <HoveredLink to="/mynotes">My Notes</HoveredLink>

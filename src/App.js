@@ -20,8 +20,8 @@ function App() {
         <Router>
           <NavbarDemo/>
           <Routes>
-            <Route exact path='/signup' element={<SignupFormDemo/>}></Route>
-            <Route exact path='/' element={<TracingBeamDemo/>}></Route>
+            <Route exact path='/' element={<SignupFormDemo/>}></Route>
+            <Route exact path='/home' element={<TracingBeamDemo/>}></Route>
             <Route exact path='/addnotes' element={<AddNote/>}></Route>
             <Route exact path='/mynotes' element={<AppleCardsCarouselDemo/>}></Route>
             <Route exact path='/about' element={<About/>}></Route>
