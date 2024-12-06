@@ -20,6 +20,20 @@ export function SignupFormDemo() {
     }
     const submit = () => {
         console.log(user);
+        createUser(user.name, user.email, user.password);
+    }
+    const createUser = async (name, email, password) => {
+        const response = await fetch('http://localhost:5000/api/auth/signup', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({name, email, password})
+        }
+    );
+    const json = response.json();
+      // setNote(json.note);
+      console.log(json);
     }
     return (
         (<div
