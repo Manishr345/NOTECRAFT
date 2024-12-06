@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Label } from "../Components/Aceternity Components/support/label";
 import { Input } from "../Components/Aceternity Components/support/input";
 import { cn } from "../lib/utils";
@@ -9,37 +9,18 @@ import {
 } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
-export function Signup() {
-    const handleSubmit = (e) => {
-        e.preventDefault();
+export function Login() {
+    const handleSubmit = () => {
         console.log("Form submitted");
     };
-    const [user, setUser] = useState({name: '', email: '', password: ''});
     const change = (e) => {
-        setUser({...user, [e.target.name]: e.target.value});
-    }
-    const submit = () => {
-        console.log(user);
-        createUser(user.name, user.email, user.password);
-    }
-    const createUser = async (name, email, password) => {
-        const response = await fetch('http://localhost:5000/api/auth/signup', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({name, email, password})
-        }
-    );
-    const json = response.json();
-      // setNote(json.note);
-      console.log(json);
+        console.log(e.target.value);
     }
     return (
         (<div
             className="max-w-md w-full mt-28 mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
             <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-                Welcome to NOTECRAFT
+                Welcome back to NOTECRAFT
             </h2>
             <form className="my-8" onSubmit={handleSubmit}>
                 <div
@@ -57,12 +38,12 @@ export function Signup() {
                     <Label htmlFor="password">Password</Label>
                     <Input id="password" name="password" placeholder="••••••••" type="password" onChange={change}/>
                 </LabelInputContainer>
-                <Link to='/login'>
+                <Link to='/home'>
                     <button
                         className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                         type="submit"
-                        onClick={submit}>
-                        Sign up &rarr;
+                        onClick={handleSubmit}>
+                        Login &rarr;
                         <BottomGradient />
                     </button>
                 </Link>
