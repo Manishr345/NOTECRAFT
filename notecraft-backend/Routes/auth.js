@@ -29,7 +29,7 @@ router.post('/signup', [
         });
         res.send({ successful: 'You have successfully signed up' });
     } catch (error) {
-        console.log(erorr.message);
+        console.log(error.message);
         res.send('Internal server error');
     }
 });
