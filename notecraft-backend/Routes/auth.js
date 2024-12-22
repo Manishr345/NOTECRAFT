@@ -59,7 +59,7 @@ router.post('/login', [
         };
         const jwtString = 'Nothing';
         const token = jwt.sign(userID, jwtString);
-        res.send({ token });
+        res.json({ token });
     } catch (error) {
         console.log(error.message);
         res.send('Internal server error');
