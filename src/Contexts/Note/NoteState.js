@@ -1,15 +1,17 @@
 import NoteContext from "./NoteContext";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "../User/UserContext";
 
 const NoteState = (props) => {
     const [note, setNote] = useState([]);
+    const context = useContext(UserContext);
 
     const addNote = async (title, description, tag) => {
       const response = await fetch('http://localhost:5000/api/note/addnotes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjcyZTEzODIzM2YyNzhlY2Q2OTkxYjJmIn0sImlhdCI6MTczMTA3MzkyMn0.q_B_HK-SzM2n-GdU6ZiJfb4YMD__Lr-fUWQ1atnCexU'
+          'token': `${context.token}`
         },
         body: JSON.stringify({title, description, tag})
       });
@@ -23,7 +25,7 @@ const NoteState = (props) => {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjcyZTEzODIzM2YyNzhlY2Q2OTkxYjJmIn0sImlhdCI6MTczMTA3MzkyMn0.q_B_HK-SzM2n-GdU6ZiJfb4YMD__Lr-fUWQ1atnCexU'
+            'token': `${context.token}`
           }
         });
         const json = await response.json();
@@ -35,7 +37,7 @@ const NoteState = (props) => {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
-            'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjcyZTEzODIzM2YyNzhlY2Q2OTkxYjJmIn0sImlhdCI6MTczMTA3MzkyMn0.q_B_HK-SzM2n-GdU6ZiJfb4YMD__Lr-fUWQ1atnCexU'
+            'token': `${context.token}`
           }
         })
         console.log(id);

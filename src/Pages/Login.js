@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Label } from "../Components/Aceternity Components/support/label";
 import { Input } from "../Components/Aceternity Components/support/input";
 import { cn } from "../lib/utils";
@@ -8,8 +8,10 @@ import {
     IconBrandFacebook,
 } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import UserContext from "../Contexts/User/UserContext";
 
 export function Login() {
+    const context = useContext(UserContext);
     const [user, setUser] = useState({name: '', email: '', password: ''});
     const loginUser = async (name, email, password) => {
         const response = await fetch('http://localhost:5000/api/auth/login', {
@@ -21,9 +23,10 @@ export function Login() {
         })
         const json = await response.json();
         console.log(json.token);
+        const token = await json.token;
+        context.setToken(token);
     }
     const handleSubmit = (e) => {
-        e.preventDefault();
         loginUser(user.name, user.email, user.password);
     };
     const change = (e) => {
