@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../support/navbar-menu";
 import { cn } from "../../../lib/utils";
 
-export function NavbarDemo() {
+export function NavbarDemo({nav}) {
   return (
-    (<div className="relative w-full flex items-center justify-center">
+    nav && (<div className="relative w-full flex items-center justify-center">
       <Navbar className="top-2" />
     </div>)
   );

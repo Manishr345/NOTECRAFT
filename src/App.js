@@ -13,18 +13,20 @@ import { TracingBeamDemo } from './Components/Aceternity Components/source/Traci
 import { Login } from './Pages/Login';
 import { Signup } from './Pages/Signup';
 import UserState from './Contexts/User/UserState';
+import { useState } from 'react';
 
 function App() {
+  const [nav, setNav] = useState(false);
   return (
     <div>
       <UserState>
         <NoteState>
           <Router>
-            <NavbarDemo />
+            <NavbarDemo nav={nav}/>
             <Routes>
               <Route exact path='/' element={<Signup />}></Route>
               <Route exact path='/login' element={<Login />}></Route>
-              <Route exact path='/home' element={<TracingBeamDemo />}></Route>
+              <Route exact path='/home' element={<TracingBeamDemo setNav={setNav}/>}></Route>
               <Route exact path='/addnotes' element={<AddNote />}></Route>
               <Route exact path='/mynotes' element={<AppleCardsCarouselDemo />}></Route>
               <Route exact path='/about' element={<About />}></Route>
